@@ -1,0 +1,22 @@
+.admin
+  = render 'admin/shared/admin_navigation'
+  .admin-content
+    = render 'admin/shared/admin_content_header'
+    .admin-content-body
+      .form
+        = simple_form_for [:admin, @user] do |f|
+          = f.error_notification
+          = f.input :avatar, label: 'Аватар'
+          = f.input :role, include_blank: false, label: 'Роль'
+          = f.input :email, label: 'Email'
+          = f.input :first_name, label: 'Имя'
+          = f.input :last_name, label: 'Фамилия'
+          = f.input :phone, label: 'Телефон'
+          = f.input :address, label: 'Полный адресс'
+          = f.input :country, label: 'Страна'
+          = f.input :city, label: 'Город'
+          = f.input :street, label: 'Улица / Бульвар/ Переулок'
+          = f.input :building, label: 'Дом / Квартира'
+          = f.button :submit
+      = link_to 'Посмотреть', admin_user_path, class: 'link__grey link__grey_green'
+      = link_to 'Назад', :back, class: 'link__grey link__grey_blue'

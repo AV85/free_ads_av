@@ -1,0 +1,92 @@
+@import "shared/variables"
+@import "shared/flexbox"
+
+body
+  font-family: 'Cuprum', sans-serif
+  background: $main_background_color
+  .container
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+    &-table
+      width: 100%
+      overflow-x: auto
+  h1
+    font-size: 2em
+    margin-bottom: 15px
+  table.table-admin
+    border: 1px solid $light_grey
+    thead
+      background: $line_grey
+      border-bottom: 1px solid $light_grey
+      font-weight: bold
+    tr
+      transition: .3s
+      &:hover
+        background: $line_grey
+        transition: .3s
+    th
+      padding: 15px 5px
+      border: 1px solid $light_grey
+    td
+      border: 1px solid $light_grey
+      padding: 15px 5px
+      .icon
+        text-decoration: none
+        padding: 4px
+        &:hover
+          cursor: pointer
+      .color-red
+        transition: 0.3s
+        outline: none
+        color: $red
+        &:hover
+          transform: scale(1.5)
+          transition: 0.3s
+          outline: none
+      .color-green
+        transition: 0.3s
+        outline: none
+        color: $green
+        &:hover
+          transform: scale(1.5)
+          transition: 0.3s
+          outline: none
+      .color-blue
+        transition: 0.3s
+        outline: none
+        color: $blue
+        &:hover
+          transform: scale(1.5)
+          transition: 0.3s
+          outline: none
+      .status-active
+        color: $green
+  .text-center
+    text-align: center
+  .link__grey
+    transition: 0.3s
+    outline: none
+    color: $font_grey
+    text-decoration: none
+    padding-right: 15px
+    &_green
+      &:hover
+        color: $green
+        transform: scale(1.5)
+        transition: 0.3s
+        outline: none
+    &_blue
+      &:hover
+        color: $blue
+        transform: scale(1.5)
+        transition: 0.3s
+        outline: none
+    &_orange
+      &:hover
+        color: $orange
+        transition: 0.3s
+        outline: none
+  .form
+    border: 1px solid $light_grey
+    padding: 15px

@@ -1,0 +1,5 @@
+.form
+  = simple_form_for [:admin, @category] do |f|
+    = f.error_notification
+    = f.input :name, label: 'Название'
+    = f.button :submit

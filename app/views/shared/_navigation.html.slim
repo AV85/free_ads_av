@@ -1,0 +1,22 @@
+.navigation
+  .navigation-logo = image_tag 'test_logo'
+  .navigation-content
+    .navigation-menu
+      = link_to 'Главная', root_path
+      = link_to 'Категории', categories_path
+    .navigation-add-ads
+      = link_to 'Добавить объявление', root_path, class: 'btn'
+    .navigation-auth
+      - if user_signed_in?
+        - if current_user.avatar.attached?
+          span = image_tag current_user.avatar.variant(resize: "48x48!")
+        - else
+          span = image_tag 'user_no_avatar'
+        - if current_user.first_name.present? && current_user.last_name.present?
+          = link_to "#{current_user.first_name} #{current_user.last_name}", root_path
+        - else
+          span = current_user.email
+        = link_to '', destroy_user_session_path, :method => :delete, class: 'fas fa-sign-out-alt 2x', title: "ВЫЙТИ"
+      - else
+        = link_to 'ВОЙТИ', new_user_session_path
+        = link_to 'ЗАРЕГИСТРИРОВАТЬСЯ', new_user_registration_path

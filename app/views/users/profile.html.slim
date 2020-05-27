@@ -1,0 +1,8 @@
+.wrapper
+  header
+    .container
+      = render 'shared/navigation'
+  .page-categories
+    .container
+      h1 Профиль пользователя № #{@user.id}
+      = @user.email
