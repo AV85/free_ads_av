@@ -1,0 +1,27 @@
+@import "shared/variables"
+@import "shared/flexbox"
+
+.search
+  @include flexbox
+  @include justify-content(center)
+  @include align-items(center)
+  width: 100%
+  height: 250px
+  &-form
+    width: 50%
+    @include flexbox
+    input
+      font-family: 'Cuprum', sans-serif
+      border: 1px solid $line_grey
+      width: 100%
+      height: 50px
+      padding-left: 15px
+      text-transform: uppercase
+      box-shadow: 0.3em 0.3em 3px rgba(122,122,122,0.2)
+    button
+      font-family: 'Cuprum', sans-serif
+      border: 1px solid $line_grey
+      color: $font_grey
+      text-transform: uppercase
+      padding: 0 15px
+      box-shadow: 0.3em 0.3em 3px rgba(122,122,122,0.2)
