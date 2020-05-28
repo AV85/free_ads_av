@@ -4,4 +4,5 @@
       = render 'shared/navigation'
   .page-categories
     .container
-      h1 all cat
+      .category-wrapper
+        = render partial: 'category_item', collection: @categories, as: :item

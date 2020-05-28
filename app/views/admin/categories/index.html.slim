@@ -4,29 +4,30 @@
     = render 'admin/shared/admin_content_header'
     .admin-content-body
       h1 Список категорий
-      table.table-admin
-        thead
-          tr
-            th ID
-            th Иконка
-            th Название
-            th Описание
-            th Дата создания
-            th
-        tbody
-          - @categories.each do |category|
+      .container-table
+        table.table-admin
+          thead
             tr
-              td = category.id
-              - if category.icon.attached?
-                td.text-center = image_tag category.icon.variant(resize: "32x32!"), class: 'rounded-circle'
-              - else
-                td.text-center No image
-              td = category.name
-              td = category.description
-              td = category.created_at.strftime('%d-%m-%Y %H:%M:%S')
-              td
-                = link_to '', admin_category_path(category), class: 'icon fas fa-eye color-green'
-                = link_to '', edit_admin_category_path(category), class: 'icon fas fa-edit color-blue'
-                = link_to '', admin_category_path(category), data: { confirm: 'Are you sure?' }, method: :delete, remote: true, class: 'icon fas fa-trash color-red'
+              th ID
+              th Иконка
+              th Название
+              th Описание
+              th Дата создания
+              th
+          tbody
+            - @categories.each do |category|
+              tr
+                td = category.id
+                - if category.icon.attached?
+                  td.text-center = image_tag category.icon.variant(resize: "32x32!"), class: 'rounded-circle'
+                - else
+                  td.text-center No image
+                td = category.name
+                td = category.description
+                td = category.created_at.strftime('%d-%m-%Y %H:%M:%S')
+                td
+                  = link_to '', admin_category_path(category), class: 'icon fas fa-eye color-green'
+                  = link_to '', edit_admin_category_path(category), class: 'icon fas fa-edit color-blue'
+                  = link_to '', admin_category_path(category), data: { confirm: 'Are you sure?' }, method: :delete, remote: true, class: 'icon fas fa-trash color-red'
       br
       = link_to "#{fa_icon('user-plus', text: 'Добавить категорию')}".html_safe, new_admin_category_path, class: 'link__grey link__grey_green'
