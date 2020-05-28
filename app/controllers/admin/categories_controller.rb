@@ -18,7 +18,7 @@ class Admin::CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
+        format.html { redirect_to admin_categories_path, notice: 'Category was successfully created.' }
       else
         format.html { render :new }
       end
@@ -28,7 +28,7 @@ class Admin::CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+        format.html { redirect_to admin_categories_path, notice: 'Category was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -48,6 +48,6 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name, :description)
+    params.require(:category).permit(:icon, :name, :description, :state)
   end
 end
