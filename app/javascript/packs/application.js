@@ -16,3 +16,5 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 import './hideMsg'
+import ActiveStorageDragAndDrop from 'active_storage_drag_and_drop'
+ActiveStorageDragAndDrop.start()

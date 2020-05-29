@@ -4,7 +4,7 @@ class CreateAds < ActiveRecord::Migration[6.0]
       t.integer :state
       t.string :name
       t.text :text
-      t.float :price
+      t.integer :price
       t.references :user
 
       t.timestamps

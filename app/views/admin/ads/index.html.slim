@@ -12,20 +12,34 @@
               th Статус
               th Название
               th Текст
+              th Изображения
               th Цена
               th
           tbody
             - @ads.each do |ad|
               tr
-                //td = ad.id
-                //- if user.avatar.attached?
-                  td.text-center = image_tag user.avatar.variant(resize: "32x32!"), class: 'rounded-circle'
-                //- else
-                  td.text-center No avatar
                 td = ad.id
-                td = ad.state
+                td
+                  - if ad.state == 1
+                    span.state.state-draft = ad.state
+                  - if ad.state == 2
+                    span.state.state-new = ad.state
+                  - if ad.state == 3
+                    span.state.state-rejected = ad.state
+                  - if ad.state == 4
+                    span.state.state-approved = ad.state
+                  - if ad.state == 5
+                    span.state.state-published = ad.state
+                  - if ad.state == 6
+                    span.state.state-archival = ad.state
                 td = ad.name
                 td = ad.text
+                td
+                  - if ad.images.attached?
+                    - ad.images.each do |img|
+                      = image_tag img.variant(resize: "48x48!"), class: 'img-thumbnail'
+                  - else
+                    span no images
                 td = ad.price
                 td
                   = link_to '', admin_ad_path(ad), class: 'icon fas fa-eye color-green'

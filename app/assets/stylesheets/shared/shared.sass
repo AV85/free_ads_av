@@ -31,6 +31,7 @@ body
     td
       border: 1px solid $light_grey
       padding: 15px 5px
+      max-width: 600px
       .icon
         text-decoration: none
         padding: 4px
@@ -90,3 +91,27 @@ body
   .form
     border: 1px solid $light_grey
     padding: 15px
+  .img-thumbnail
+    border: 1px solid $light_grey
+    padding: 2px
+    margin: 2px
+
+  .state
+    background: $orange
+    border: 1px solid $light_grey
+    padding: 4px
+    color: $white
+    text-align: center
+    &-draft
+      background: $yellow
+      color: $black
+    &-new
+      background: $orange
+    &-rejected
+      background: $red
+    &-approved
+      background: $blue
+    &-published
+      background: $green
+    &-archival
+      background: $purple

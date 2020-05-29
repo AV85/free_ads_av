@@ -31,7 +31,7 @@
                 - if user.avatar.attached?
                   td.text-center = image_tag user.avatar.variant(resize: "32x32!"), class: 'rounded-circle'
                 - else
-                  td.text-center No avatar
+                  td.text-center = image_tag 'user_no_avatar.png', style: 'width: 32px; height: 32px;'
                 td = user.role
                 td = user.email
                 td = user.first_name
@@ -45,9 +45,11 @@
                 td = user.created_at.strftime('%d-%m-%Y %H:%M:%S')
                 td = user.sign_in_count
                 - if user.locked_at.present?
-                  td = user.locked_at.strftime('%d-%m-%Y %H:%M:%S')
+                  td
+                    .state.state-rejected = user.locked_at.strftime('%d-%m-%Y %H:%M:%S')
                 - else
-                  td.status-active Активный
+                  td
+                    .state.state-published Активный
                 td
                   = link_to '', admin_user_path(user), class: 'icon fas fa-eye color-green'
                   = link_to '', edit_admin_user_path(user), class: 'icon fas fa-edit color-blue'

@@ -1,4 +1,5 @@
 class Admin::AdsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -48,6 +49,6 @@ class Admin::AdsController < ApplicationController
   end
 
   def ad_params
-    params.require(:ad).permit(:state, :name, :text, :price)
+    params.require(:ad).permit(:state, :name, :text, :price, images: [])
   end
 end
