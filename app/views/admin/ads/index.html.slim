@@ -42,9 +42,8 @@
                     span no images
                 td = ad.price
                 td
-                  = link_to '', admin_ad_path(ad), class: 'icon fas fa-eye color-green'
-                  = link_to '', edit_admin_ad_path(ad), class: 'icon fas fa-edit color-blue'
-                  = link_to '', admin_ad_path(ad), data: { confirm: 'Are you sure?' }, method: :delete, remote: true, class: 'icon fas fa-trash color-red'
+                  = link_to '', admin_ad_path(ad), class: 'fas fa-eye table__icon table__icon_green'
+                  = link_to '', edit_admin_ad_path(ad), class: 'fas fa-edit table__icon table__icon_blue'
+                  = link_to '', admin_ad_path(ad), data: { confirm: 'Are you sure?' }, method: :delete, remote: true, class: 'fas fa-trash table__icon table__icon_red'
       br
-
       = link_to "#{fa_icon('user-plus', text: 'Добавить обьявление')}".html_safe, new_admin_ad_path, class: 'link__grey link__grey_green'

@@ -32,61 +32,28 @@ body
       border: 1px solid $light_grey
       padding: 15px 5px
       max-width: 600px
-      .icon
-        text-decoration: none
-        padding: 4px
-        &:hover
-          cursor: pointer
-      .color-red
+    .table__icon
+      text-decoration: none
+      padding: 4px
+      transition: 0.3s
+      outline: none
+      &:hover
+        cursor: pointer
+        transform: scale(1.5)
         transition: 0.3s
         outline: none
+      &_red
         color: $red
-        &:hover
-          transform: scale(1.5)
-          transition: 0.3s
-          outline: none
-      .color-green
-        transition: 0.3s
-        outline: none
+      &_green
         color: $green
-        &:hover
-          transform: scale(1.5)
-          transition: 0.3s
-          outline: none
-      .color-blue
-        transition: 0.3s
-        outline: none
+      &_blue
         color: $blue
-        &:hover
-          transform: scale(1.5)
-          transition: 0.3s
-          outline: none
-      .color-yellow
-        transition: 0.3s
-        outline: none
+      &_yellow
         color: $yellow
-        &:hover
-          transform: scale(1.5)
-          transition: 0.3s
-          outline: none
-      .color-purple
-        transition: 0.3s
-        outline: none
+      &_purple
         color: $purple
-        &:hover
-          transform: scale(1.5)
-          transition: 0.3s
-          outline: none
-      .color-orange
-        transition: 0.3s
-        outline: none
+      &_orange
         color: $orange
-        &:hover
-          transform: scale(1.5)
-          transition: 0.3s
-          outline: none
-      .status-active
-        color: $green
   .text-center
     text-align: center
   .link__grey
@@ -115,11 +82,28 @@ body
   .form
     border: 1px solid $light_grey
     padding: 15px
+    &-admin
+      width: 100%
+      max-width: 800px
+      .input
+        @include flexbox
+        @include justify-content(space-between)
+        input
+          height: 40px
+          width: 100%
+          max-width: 500px
+          margin: 4px 0
+          padding: 0 15px
+          border: 1px solid $line_grey
+          color: $font_grey
+        label
+          @include flexbox
+          @include justify-content(center)
+          @include align-items(center)
   .img-thumbnail
     border: 1px solid $light_grey
     padding: 2px
     margin: 2px
-
   .state
     background: $orange
     border: 1px solid $light_grey

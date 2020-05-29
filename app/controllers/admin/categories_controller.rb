@@ -4,7 +4,7 @@ class Admin::CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy to_publish to_draft]
 
   def index
-    @categories = Category.all
+    @categories = Category.order(id: :asc)
   end
 
   def show; end

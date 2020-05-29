@@ -1,7 +1,7 @@
 .form
-  = simple_form_for [:admin, @category] do |f|
+  = simple_form_for [:admin, @category], html: {class: 'form-admin'} do |f|
     = f.error_notification
-    = f.input :icon, label: 'Иконка'
-    = f.input :name, label: 'Название'
-    = f.input :description, label: 'Описание'
+    = f.input :icon, label: 'Иконка:'
+    = f.input :name, label: 'Название:'
+    = f.input :description, label: 'Описание:'
     = f.button :submit
