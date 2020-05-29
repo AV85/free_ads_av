@@ -4,3 +4,4 @@
   .admin-content-header-item
     = fa_icon('bell')
     = fa_icon('comments')
+    = link_to fa_icon('sign-out-alt'), destroy_user_session_path, :method => :delete, title: "ВЫЙТИ"
