@@ -1,0 +1,36 @@
+.admin
+  = render 'admin/shared/admin_navigation'
+  .admin-content
+    = render 'admin/shared/admin_content_header'
+    .admin-content-body
+      h1 Список пользователей
+      .container-table
+        table.table-admin
+          thead
+            tr
+              th ID
+              th Статус
+              th Название
+              th Текст
+              th Цена
+              th
+          tbody
+            - @ads.each do |ad|
+              tr
+                //td = ad.id
+                //- if user.avatar.attached?
+                  td.text-center = image_tag user.avatar.variant(resize: "32x32!"), class: 'rounded-circle'
+                //- else
+                  td.text-center No avatar
+                td = ad.id
+                td = ad.state
+                td = ad.name
+                td = ad.text
+                td = ad.price
+                td
+                  = link_to '', admin_ad_path(ad), class: 'icon fas fa-eye color-green'
+                  = link_to '', edit_admin_ad_path(ad), class: 'icon fas fa-edit color-blue'
+                  = link_to '', admin_ad_path(ad), data: { confirm: 'Are you sure?' }, method: :delete, remote: true, class: 'icon fas fa-trash color-red'
+      br
+
+      = link_to "#{fa_icon('user-plus', text: 'Добавить обьявление')}".html_safe, new_admin_ad_path, class: 'link__grey link__grey_green'

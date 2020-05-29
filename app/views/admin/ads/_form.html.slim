@@ -1,0 +1,8 @@
+.form
+  = simple_form_for [:admin, @ad] do |f|
+    = f.error_notification
+    = f.input :name, label: 'Название'
+    = f.input :text, label: 'Текст'
+    = f.input :price, label: 'Цена'
+    = f.input :user_id, collection: User.all.map { |user| [user.email, user.id, {data: {email: user.email}}] }, include_blank: false
+    = f.button :submit

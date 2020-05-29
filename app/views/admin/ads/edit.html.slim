@@ -1,0 +1,8 @@
+.admin
+  = render 'admin/shared/admin_navigation'
+  .admin-content
+    = render 'admin/shared/admin_content_header'
+    .admin-content-body
+      h1 Редактировать объявление
+      = render 'form'
+      = link_to 'Назад', :back, class: 'link__grey link__grey_blue'
