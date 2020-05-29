@@ -34,8 +34,12 @@
                 td = category.description
                 td = category.created_at.strftime('%d-%m-%Y %H:%M:%S')
                 td
-                  = link_to '', admin_category_path(category), class: 'icon fas fa-eye color-green'
-                  = link_to '', edit_admin_category_path(category), class: 'icon fas fa-edit color-blue'
-                  = link_to '', admin_category_path(category), data: { confirm: 'Are you sure?' }, method: :delete, remote: true, class: 'icon fas fa-trash color-red'
+                  - if category.state == 1
+                    = link_to '', admin_to_publish_path(category), class: 'icon fas fa-file-import color-green', title: 'Опубликовать'
+                  - if category.state == 2
+                    = link_to '', admin_to_publish_path(category), class: 'icon fas fa-file-export color-orange', title: 'В черновик'
+                  = link_to '', admin_category_path(category), class: 'icon fas fa-eye color-purple', title: 'Посмотреть'
+                  = link_to '', edit_admin_category_path(category), class: 'icon fas fa-edit color-blue', title: 'Редактировать'
+                  = link_to '', admin_category_path(category), data: { confirm: 'Are you sure?' }, method: :delete, remote: true, class: 'icon fas fa-trash color-red', title: 'Удалить'
       br
       = link_to "#{fa_icon('user-plus', text: 'Добавить категорию')}".html_safe, new_admin_category_path, class: 'link__grey link__grey_green'

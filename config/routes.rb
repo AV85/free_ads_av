@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :dashboard, only: :index
     resources :categories
+    get '/categories/:id/to_publish', to: 'categories#to_publish', as: 'to_publish'
+    get '/categories/:id/to_draft', to: 'categories#to_draft', as: 'to_draft'
     resources :ads
     resources :users
   end

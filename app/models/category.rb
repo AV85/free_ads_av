@@ -12,5 +12,13 @@ class Category < ApplicationRecord
     state :draft
     state :published
     state :archival
+
+    event :to_publish do
+      transition draft: :published
+    end
+
+    event :to_draft do
+      transition published: :draft
+    end
   end
 end

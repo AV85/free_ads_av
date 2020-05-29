@@ -8,10 +8,11 @@ User.create!(
   password_confirmation: 'password',
   first_name: 'Александр',
   last_name: 'Вихор',
+  phone: FFaker::PhoneNumberUA.mobile_phone_number,
   address: 'Украина, Донецкая обл., г.Бахмут',
   city: 'Бахмут',
   street: 'ул. Медведева',
-  building: 'д. 27',
+  building: '27',
   role: 3
 )
 
@@ -21,6 +22,7 @@ User.create!(
   password_confirmation: 'password',
   first_name: FFaker::NameRU.first_name,
   last_name: FFaker::NameRU.last_name,
+  phone: FFaker::PhoneNumberUA.mobile_phone_number,
   address: FFaker::AddressRU.province,
   city: FFaker::AddressRU.city,
   street: FFaker::AddressRU.street_name,
@@ -34,6 +36,7 @@ user = User.create!(
   password_confirmation: 'password',
   first_name: FFaker::NameRU.first_name,
   last_name: FFaker::NameRU.last_name,
+  phone: FFaker::PhoneNumberUA.mobile_phone_number,
   address: FFaker::AddressRU.province,
   city: FFaker::AddressRU.city,
   street: FFaker::AddressRU.street_name,
@@ -42,28 +45,8 @@ user = User.create!(
 )
 
 Category.create!(
-  name: 'Недвижимость',
-  description: 'Объявления о покупке / продаже / аренде недвижимости'
-)
-
-Category.create!(
-  name: 'Транспорт',
-  description: 'Объявления о покупке / продаже транспорта'
-)
-
-Category.create!(
-  name: 'Запчасти для транспорта',
-  description: 'Объявления о покупке / продаже запчастей для транспорта'
-)
-
-Category.create!(
-  name: 'Электроника',
-  description: 'Объявления о покупке / продаже электронной техники'
-)
-
-Category.create!(
-  name: 'Одежда',
-  description: 'Объявления о покупке / продаже одежды'
+  name: 'Детские товары',
+  description: 'Объявления о покупке / продаже детских товаров'
 )
 
 Category.create!(
@@ -72,13 +55,22 @@ Category.create!(
 )
 
 Category.create!(
-  name: 'Работа',
-  description: 'Объявления о вакансиях и требуемых работниках'
+  name: 'Запчасти для транспорта',
+  description: 'Объявления о покупке / продаже запчастей для транспорта'
 )
 
 Category.create!(
-  name: 'Детские товары',
-  description: 'Объявления о покупке / продаже детских товаров'
+  name: 'Недвижимость',
+  description: 'Объявления о покупке / продаже / аренде недвижимости'
+)
+
+Category.create!(
+  name: 'Обмен', description: 'Объявления в которых пользователи предлогают обмен'
+)
+
+Category.create!(
+  name: 'Одежда',
+  description: 'Объявления о покупке / продаже одежды'
 )
 
 Category.create!(
@@ -86,25 +78,36 @@ Category.create!(
 )
 
 Category.create!(
-  name: 'Обмен', description: 'Объявления в которых пользователи предлогают обмен'
+  name: 'Работа',
+  description: 'Объявления о вакансиях и требуемых работниках'
+)
+
+Category.create!(
+  name: 'Транспорт',
+  description: 'Объявления о покупке / продаже транспорта'
+)
+
+Category.create!(
+  name: 'Электроника',
+  description: 'Объявления о покупке / продаже электронной техники'
 )
 
 Ad.create!(
-  name: 'Продам 3-х комнатную квартиру!',
+  name: 'Продам 3-х комнатную квартиру',
   text: FFaker::LoremRU.paragraph,
   price: 1000,
   user_id: user.id
 )
 
 Ad.create!(
-  name: 'Продам дом!',
+  name: 'Продам отличный дом',
   text: FFaker::LoremRU.paragraph,
   price: 3000,
   user_id: user.id
 )
 
 Ad.create!(
-  name: 'Продам автомобиль',
+  name: 'Продам супер автомобиль',
   text: FFaker::LoremRU.paragraph,
   price: 5000,
   user_id: user.id
