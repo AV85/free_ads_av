@@ -1,9 +1,14 @@
 .form
-  = simple_form_for [:admin, @ad] do |f|
+  = simple_form_for [:admin, @ad], html:{class: 'form-admin'} do |f|
     = f.error_notification
     = f.input :name, label: 'Название'
     = f.input :text, label: 'Текст'
     = f.input :price, label: 'Цена'
-    = f.drag_and_drop_file_field :images, nil, size_limit: 5_000_000
+    = f.input :main_image, label: 'Главная картинка'
+    = f.input :image_1, label: 'Первая картинка'
+    = f.input :image_2, label: 'Вторая картинка'
+    = f.input :image_3, label: 'Третья картинка'
+    = f.input :image_4, label: 'Четвертая картинка'
+    = f.input :image_5, label: 'Пятая картинка'
     = f.input :user_id, collection: User.all.map { |user| [user.email, user.id, {data: {email: user.email}}] }, include_blank: false
     = f.button :submit

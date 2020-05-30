@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'ads/show'
   devise_for :users
 
   root to: 'home#index'
   resources :categories, only: %i[index show]
   get '/users/:id/profile', to: 'users#profile', as: 'profile'
+  resources :ads, only: %i[show]
 
   namespace :admin do
     resources :dashboard, only: :index

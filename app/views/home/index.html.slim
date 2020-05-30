@@ -9,9 +9,11 @@
           = render partial: 'search_form'
       .category-wrapper
         = render partial: 'categories/category_item', collection: @categories, as: :item
-    section.vip-ads
+    section.ads
       .container
-        .vip-ads__title
+        .ads__title
           | VIP-объявления
-          .vip-ads__title-subtitle Продавай и покупай все что угодно!
-        .vip-ads__content
+          .ads__title-subtitle Продавай и покупай все что угодно!
+        .ads__content
+          = render partial: 'ads/ads_item', collection: @ads, as: :item
+  = render 'shared/footer'

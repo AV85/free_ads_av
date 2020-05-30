@@ -30,7 +30,13 @@ body
       border: 1px solid $light_grey
     td
       border: 1px solid $light_grey
-      padding: 15px 5px
+      padding: 6px 6px
+      max-width: 500px
+    .table__td-size_sm
+      max-width: 150px
+    .table__td-size_md
+      max-width: 300px
+    .table__td-size_lg
       max-width: 600px
     .table__icon
       text-decoration: none
@@ -96,10 +102,37 @@ body
           padding: 0 15px
           border: 1px solid $line_grey
           color: $font_grey
+        textarea
+          height: 150px
+          width: 100%
+          max-width: 500px
+          margin: 4px 0
+          padding: 0 15px
+          border: 1px solid $line_grey
+          color: $font_grey
         label
           @include flexbox
           @include justify-content(center)
           @include align-items(center)
+        select
+          height: 40px
+          width: 100%
+          max-width: 500px
+          border: 1px solid $line_grey
+          color: $font_grey
+    .asdndzone
+      @include flexbox
+      @include justify-content(center)
+      @include align-items(center)
+      min-height: 100px
+      border: 1px solid $line_grey
+      background: rgba(0,0,0,0.1)
+      padding-top: 15px
+      text-align: center
+      width: 100%
+      display: inline-block
+      box-sizing: border-box
+      margin: 4px 0 8px 0
   .img-thumbnail
     border: 1px solid $light_grey
     padding: 2px

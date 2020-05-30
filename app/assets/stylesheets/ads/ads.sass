@@ -1,0 +1,53 @@
+@import "shared/flexbox"
+@import "shared/variables"
+
+section.ads
+  width: 100%
+  background: rgb(228,228,228)
+  .ads
+    &__title
+      font-size: 3em
+      text-align: center
+      padding: 30px 0
+      &-subtitle
+        color: $font_grey
+        font-size: .4em
+    &__content
+      @include flexbox()
+      @include justify-content(flex-start)
+      @include flex-wrap(wrap)
+    &__item
+      background: $white
+      width: calc(1080px / 4)
+      margin: 15px
+      img
+        object-fit: cover
+        width: 270px
+        height: 220px
+      &-category
+        font-size: .8em
+        padding: 15px
+        color: $font_grey
+      &-title
+        padding: 0 15px
+        font-size: 1.3em
+        font-weight: bold
+        min-height: 40px
+        a
+          color: $orange
+          transition: .3s all ease
+          text-decoration: none
+          display: block
+          &:hover
+            color: $green
+            transition: .3s all ease
+      &-info
+        @include flexbox()
+        @include justify-content(space-between)
+        @include align-items(center)
+        padding: 15px
+      &-price
+        font-size: 1.2em
+        font-weight: bolder
+      &-view
+        color: $font_grey

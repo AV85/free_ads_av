@@ -30,8 +30,8 @@
                   td.text-center = image_tag category.icon.variant(resize: "32x32!"), class: 'rounded-circle'
                 - else
                   td.text-center No image
-                td = category.name
-                td = category.description
+                td.table__td-size_md = category.name
+                td.table__td-size_lg = category.description
                 td = category.created_at.strftime('%d-%m-%Y %H:%M:%S')
                 td
                   - if category.state == 1

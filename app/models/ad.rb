@@ -2,7 +2,12 @@ class Ad < ApplicationRecord
   extend Enumerize
   enumerize :state, in: {:draft => 1, :new => 2, :rejected => 3, :approved => 4, :published => 5, :archival => 6 }
 
-  has_many_attached :images, dependent: :destroy
+  has_one_attached :main_image
+  has_one_attached :image_1
+  has_one_attached :image_2
+  has_one_attached :image_3
+  has_one_attached :image_4
+  has_one_attached :image_5
 
   scope :approved, -> { where(state: 4) }
   scope :published, -> { where(state: 5) }

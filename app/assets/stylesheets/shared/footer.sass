@@ -1,0 +1,21 @@
+@import "shared/flexbox"
+@import "shared/variables"
+
+footer
+  min-height: 400px
+  background: $purple_dark
+  color: $white
+  position: relative
+  .footer-copyright
+    width: calc(100% - 30px)
+    padding: 15px
+    position: absolute
+    bottom: 0
+    text-align: center
+    a
+      color: $white
+      text-decoration: none
+      transition: .3s all ease
+      &:hover
+        color: $orange
+        transition: .3s all ease
