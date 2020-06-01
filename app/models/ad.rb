@@ -13,6 +13,8 @@ class Ad < ApplicationRecord
   scope :published, -> { where(state: 5) }
   scope :not_draft, -> { where.not(state: 1) }
 
+  validates :name, presence: true
+
   state_machine initial: :draft do
     state :draft
     state :new

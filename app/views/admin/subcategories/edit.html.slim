@@ -1,0 +1,12 @@
+.admin
+  = render 'admin/shared/admin_navigation'
+  .admin-content
+    = render 'admin/shared/admin_content_header'
+    .admin-content-body
+      h1 Добавить подкатегорию
+      .form
+        = simple_form_for [:admin, @category, @subcategory], html: {class: 'form-admin'} do |f|
+          = f.error_notification
+          = f.input :name, label: 'Название:'
+          = f.input :category_id, as: :hidden, input_html: { value: @category.id }
+          = f.button :submit
