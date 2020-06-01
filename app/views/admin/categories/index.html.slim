@@ -12,7 +12,7 @@
               th Статус
               th Иконка
               th Название
-              th Описание
+              th Подкатегории
               th Дата создания
               th
           tbody
@@ -31,7 +31,12 @@
                 - else
                   td.text-center No image
                 td.table__td-size_md = category.name
-                td.table__td-size_lg = category.description
+                td
+                  .table__subcategories
+                    .table__subcategories-list
+                      = render partial: 'admin/subcategories/item_subcategory', collection: category.subcategories, as: :item
+                    .table__subcategories-add
+                      = render 'admin/subcategories/create_subcategories', category: category
                 td = category.created_at.strftime('%d-%m-%Y %H:%M:%S')
                 td
                   - if category.state == 1

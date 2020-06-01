@@ -7,6 +7,7 @@ class Category < ApplicationRecord
   scope :archival, -> { where(state: 3) }
 
   has_one_attached :icon, dependent: :destroy
+  has_many :subcategories
 
   state_machine initial: :draft do
     state :draft

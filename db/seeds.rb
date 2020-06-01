@@ -74,53 +74,25 @@ user3 = User.create!(
   role: 1
 )
 
-Category.create!(
-  name: 'Детские товары',
-  description: 'Объявления о покупке / продаже детских товаров'
-)
+Category.create!(name: 'Детские товары')
 
-Category.create!(
-  name: 'Животные',
-  description: 'Объявления о покупке / продаже / дара животных'
-)
+Category.create!(name: 'Животные')
 
-Category.create!(
-  name: 'Запчасти для транспорта',
-  description: 'Объявления о покупке / продаже запчастей для транспорта'
-)
+Category.create!(name: 'Запчасти для транспорта')
 
-Category.create!(
-  name: 'Недвижимость',
-  description: 'Объявления о покупке / продаже / аренде недвижимости'
-)
+Category.create!(name: 'Недвижимость')
 
-Category.create!(
-  name: 'Обмен', description: 'Объявления в которых пользователи предлогают обмен'
-)
+Category.create!(name: 'Обмен')
 
-Category.create!(
-  name: 'Одежда',
-  description: 'Объявления о покупке / продаже одежды'
-)
+Category.create!(name: 'Одежда')
 
-Category.create!(
-  name: 'Отдам даром', description: 'Объявления о бесплатных товарах'
-)
+Category.create!(name: 'Отдам даром')
 
-Category.create!(
-  name: 'Работа',
-  description: 'Объявления о вакансиях и требуемых работниках'
-)
+Category.create!(name: 'Работа')
 
-Category.create!(
-  name: 'Транспорт',
-  description: 'Объявления о покупке / продаже транспорта'
-)
+Category.create!(name: 'Транспорт')
 
-Category.create!(
-  name: 'Электроника',
-  description: 'Объявления о покупке / продаже электронной техники'
-)
+Category.create!(name: 'Электроника')
 
 Ad.create!(
   name: 'Продам 3-х комнатную квартиру',

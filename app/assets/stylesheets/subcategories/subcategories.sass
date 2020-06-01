@@ -1,0 +1,12 @@
+@import "shared/variables"
+@import "shared/flexbox"
+
+.subcategory__item
+  &-wrapper
+    @include flexbox()
+    @include justify-content(space-between)
+    align-items: center
+    border: 1px solid $light_grey
+    padding: 4px
+    margin: 4px
+  &-title

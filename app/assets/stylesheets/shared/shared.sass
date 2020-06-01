@@ -60,6 +60,16 @@ body
         color: $purple
       &_orange
         color: $orange
+    .table__subcategories
+      @include flexbox()
+      &-list
+        width: 150px
+      &-add
+        width: 30px
+        @include flexbox()
+        @include justify-content(flex-end)
+        @include align-items(center)
+
   .text-center
     text-align: center
   .link__grey

@@ -1,0 +1,6 @@
+.form
+  = simple_form_for [:admin, @category, Subcategory.new], html: {class: 'form-admin'} do |f|
+    = f.error_notification
+    = f.input :name, label: 'Название:'
+    = f.input :category_id, as: :hidden, input_html: { value: @category.id }
+    = f.button :submit
