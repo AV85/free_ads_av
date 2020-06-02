@@ -11,9 +11,9 @@
               th ID
               th Статус
               th Раздел и подраздел
+              th Фото
               th Название
               th Текст
-              th Фото
               th Цена
               th
           tbody
@@ -37,21 +37,21 @@
                   span = ad.subcategory.category.name
                   = fa_icon('angle-right', style: 'padding: 0 5px')
                   span = ad.subcategory.name
+                td.table__td-size_sm
+                  - if ad.main_image.attached?
+                    = image_tag ad.main_image.variant(resize: "64x64"), class: 'img-thumbnail'
+                  - if ad.image_1.attached?
+                    = image_tag ad.image_1.variant(resize: "64x64"), class: 'img-thumbnail'
+                  - if ad.image_2.attached?
+                    = image_tag ad.image_2.variant(resize: "64x64"), class: 'img-thumbnail'
+                  - if ad.image_3.attached?
+                    = image_tag ad.image_3.variant(resize: "64x64"), class: 'img-thumbnail'
+                  - if ad.image_4.attached?
+                    = image_tag ad.image_4.variant(resize: "64x64"), class: 'img-thumbnail'
+                  - if ad.image_5.attached?
+                    = image_tag ad.image_5.variant(resize: "64x64"), class: 'img-thumbnail'
                 td.table__td-size_md = ad.name
                 td.table__td-size_lg = ad.text
-                td
-                  - if ad.main_image.attached?
-                    = image_tag ad.main_image.variant(resize: "32x32!"), class: 'img-thumbnail'
-                  - if ad.image_1.attached?
-                    = image_tag ad.image_1.variant(resize: "32x32!"), class: 'img-thumbnail'
-                  - if ad.image_2.attached?
-                    = image_tag ad.image_2.variant(resize: "32x32!"), class: 'img-thumbnail'
-                  - if ad.image_3.attached?
-                    = image_tag ad.image_3.variant(resize: "32x32!"), class: 'img-thumbnail'
-                  - if ad.image_4.attached?
-                    = image_tag ad.image_4.variant(resize: "32x32!"), class: 'img-thumbnail'
-                  - if ad.image_5.attached?
-                    = image_tag ad.image_5.variant(resize: "32x32!"), class: 'img-thumbnail'
                 td = ad.price
                 td
                   = link_to '', admin_ad_path(ad), class: 'fas fa-eye table__icon table__icon_green'

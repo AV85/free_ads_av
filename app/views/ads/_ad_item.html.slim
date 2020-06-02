@@ -1,0 +1,33 @@
+.ad__item
+  .ad__item-wrapper
+    .ad__item-body
+      .ad__item-breadcrumbs
+        = fa_icon('folder', style: 'padding: 0 4px')
+        span = item.subcategory.category.name
+        = fa_icon('angle-right', style: 'padding: 0 4px')
+        span = item.subcategory.name
+      .ad__item-images.owl-carousel.owl-theme.owl-loaded.owl-drag
+        = image_tag item.main_image.variant(resize: "800x800") if item.main_image.attached?
+        - unless item.main_image.attached?
+          .ad__item-images
+            span = image_tag 'no_image.png', style: 'max-width: 50%; margin-left: 25%'
+        = image_tag item.image_1.variant(resize: "800x800") if item.image_1.attached?
+        = image_tag item.image_2.variant(resize: "800x800") if item.image_2.attached?
+        = image_tag item.image_3.variant(resize: "800x800") if item.image_3.attached?
+        = image_tag item.image_4.variant(resize: "800x800") if item.image_4.attached?
+        = image_tag item.image_5.variant(resize: "800x800") if item.image_5.attached?
+      .ad__item-info
+        .ad__item-info-map
+          span = fa_icon('map-marked-alt')
+          span = item.user.city
+        .ad__item-info-date
+          span = fa_icon('clock')
+          span = item.created_at.strftime('%d-%m-%Y %H:%M')
+      .ad__item-title
+        = item.name
+      .ad__item-text
+        = item.text.html_safe
+    .ad__item-sidebar
+      .ad__item-user
+        .ad__item-user-image img
+        .ad__item-user-name = item.user.email

@@ -6,6 +6,8 @@ class Subcategory < ApplicationRecord
   has_many :ads, dependent: :destroy
   validates :name, presence: true
 
+  scope :subcategory_published, -> { where(state: 2) }
+
   state_machine initial: :draft do
     state :draft
     state :published

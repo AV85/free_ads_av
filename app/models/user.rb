@@ -12,6 +12,7 @@ class User < ApplicationRecord
          :lockable
 
   has_one_attached :avatar, dependent: :destroy
+  has_many :ads
 
   def admin?
     role == 3

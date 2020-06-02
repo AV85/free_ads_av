@@ -43,6 +43,20 @@ class Admin::AdsController < ApplicationController
     end
   end
 
+  def to_publish
+    @ad.to_publish
+    redirect_and_notice
+  end
+
+  def to_draft
+    @ad.to_draft
+    redirect_and_notice
+  end
+
+  def redirect_and_notice
+    redirect_to admin_categories_path, notice: 'STATE was successfully updated.'
+  end
+
   private
   def set_ad
     @ad = Ad.find(params[:id])

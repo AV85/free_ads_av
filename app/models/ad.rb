@@ -3,6 +3,7 @@ class Ad < ApplicationRecord
   enumerize :state, in: {:draft => 1, :new => 2, :rejected => 3, :approved => 4, :published => 5, :archival => 6 }
 
   belongs_to :subcategory
+  belongs_to :user
 
   has_one_attached :main_image
   has_one_attached :image_1

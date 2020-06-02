@@ -51,3 +51,49 @@ section.ads
         font-weight: bolder
       &-view
         color: $font_grey
+
+.page-ad
+  margin: 20px 0
+  padding: 15px 0
+  background: rgb(222, 222, 222)
+  .ad__item
+    &-wrapper
+      @include flexbox()
+    &-body
+      background: $white
+      width: calc(70% - 22.5px)
+      max-width: 750px
+      margin: 0 7.5px 0 15px
+      padding: 15px
+    &-info
+      @include flexbox()
+      @include justify-content(space-between)
+      padding-bottom: 15px
+      i
+        color: $orange
+        margin: 0 6px 0 0
+    &-title
+      font-size: 2em
+      color: $green
+      font-weight: bolder
+      padding-bottom: 15px
+    &-text
+      font-size: 1.2em
+      padding-bottom: 15px
+      white-space: pre-line
+      line-height: 1.2em
+    &-images
+      padding: 0 0 15px 0
+      text-align: center
+      img
+        object-fit: cover
+        width: 100%
+        max-height: 600px
+    &-breadcrumbs
+      padding: 0 0 15px 0
+      color: $font_grey
+    &-sidebar
+      background: $white
+      width: calc(30% - 22.5px)
+      margin: 0 15px 0 7.5px
+      padding: 15px

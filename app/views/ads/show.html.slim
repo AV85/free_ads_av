@@ -1,2 +1,8 @@
-h1 Ads#show
-p Find me in app/views/ads/show.html.slim
+.page
+  header
+    .container
+      = render 'shared/navigation'
+  .page-ad
+    .container
+      = render partial: 'ad_item', object: @ad, as: :item
+  = render 'shared/footer'
