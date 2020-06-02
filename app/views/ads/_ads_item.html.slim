@@ -3,7 +3,10 @@
     .ads__item-main-image = link_to "#{image_tag item.main_image.variant(resize: '500x500')}".html_safe, ad_path(item)
   - else
     .ads__item-no-image = link_to "#{image_tag 'no_image.png'}".html_safe, ad_path(item)
-  .ads__item-category Транспорт
+  .ads__item-category
+    span = item.subcategory.category.name
+    = fa_icon('angle-right', style: 'padding: 0 5px')
+    span = item.subcategory.name
   .ads__item-title
     = link_to item.name.truncate(48), ad_path(item)
   .ads__item-info

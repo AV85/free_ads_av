@@ -50,13 +50,16 @@ class Admin::AdsController < ApplicationController
 
   def ad_params
     params.require(:ad).permit(:state,
-                               :name, :text,
+                               :name,
+                               :text,
                                :price,
                                :main_image,
                                :image_1,
                                :image_2,
                                :image_3,
                                :image_4,
-                               :image_5)
+                               :image_5,
+                               :subcategory_id,
+                               :user_id)
   end
 end

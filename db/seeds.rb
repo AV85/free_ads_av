@@ -74,106 +74,111 @@ user3 = User.create!(
   role: 1
 )
 
-Category.create!(name: 'Детские товары')
-
+category = Category.create!(name: 'Детские товары')
 Category.create!(name: 'Животные')
-
 Category.create!(name: 'Запчасти для транспорта')
-
 Category.create!(name: 'Недвижимость')
-
 Category.create!(name: 'Обмен')
-
 Category.create!(name: 'Одежда')
-
 Category.create!(name: 'Отдам даром')
-
 Category.create!(name: 'Работа')
-
 Category.create!(name: 'Транспорт')
-
 Category.create!(name: 'Электроника')
+
+subcategory = Subcategory.create!(name: 'Игрушки', category_id: category.id)
 
 Ad.create!(
   name: 'Продам 3-х комнатную квартиру',
   text: FFaker::LoremRU.paragraph,
   price: 90_000,
-  user_id: user.id
+  user_id: user.id,
+  subcategory_id: subcategory.id
 )
 
 Ad.create!(
   name: 'Продам отличный дом',
   text: FFaker::LoremRU.paragraph,
   price: 1_000_000,
-  user_id: user.id
+  user_id: user.id,
+  subcategory_id: subcategory.id
 )
 
 Ad.create!(
   name: 'Продам супер автомобиль',
   text: FFaker::LoremRU.paragraph,
   price: 55_000,
-  user_id: user.id
+  user_id: user.id,
+  subcategory_id: subcategory.id
 )
 
 Ad.create!(
   name: 'Продам шубу',
   text: FFaker::LoremRU.paragraph,
   price: 5000,
-  user_id: user2.id
+  user_id: user2.id,
+  subcategory_id: subcategory.id
 )
 
 Ad.create!(
   name: 'Продам кота',
   text: FFaker::LoremRU.paragraph,
   price: 2000,
-  user_id: user2.id
+  user_id: user2.id,
+  subcategory_id: subcategory.id
 )
 
 Ad.create!(
   name: 'Продам собаку',
   text: FFaker::LoremRU.paragraph,
   price: 2000,
-  user_id: user2.id
+  user_id: user2.id,
+  subcategory_id: subcategory.id
 )
 
 Ad.create!(
   name: 'Продам мотоцикл',
   text: FFaker::LoremRU.paragraph,
   price: 7000,
-  user_id: user3.id
+  user_id: user3.id,
+  subcategory_id: subcategory.id
 )
 
 Ad.create!(
   name: 'Продам Мерседес',
   text: FFaker::LoremRU.paragraph,
   price: 100_000,
-  user_id: user3.id
+  user_id: user3.id,
+  subcategory_id: subcategory.id
 )
 
 Ad.create!(
   name: 'Продам лодку',
   text: FFaker::LoremRU.paragraph,
   price: 10_000,
-  user_id: user3.id
+  user_id: user3.id,
+  subcategory_id: subcategory.id
 )
 
 Ad.create!(
   name: 'Продам замечательные сапоги',
   text: FFaker::LoremRU.paragraph,
   price: 1000,
-  user_id: user3.id
+  user_id: user3.id,
+  subcategory_id: subcategory.id
 )
 
 Ad.create!(
   name: 'Продам отличный велосипед',
   text: FFaker::LoremRU.paragraph,
   price: 5000,
-  user_id: user.id
+  user_id: user.id,
+  subcategory_id: subcategory.id
 )
 
 Ad.create!(
   name: 'сдам в аренду автомобиль',
   text: FFaker::LoremRU.paragraph,
   price: 200,
-  user_id: user.id
+  user_id: user.id,
+  subcategory_id: subcategory.id
 )

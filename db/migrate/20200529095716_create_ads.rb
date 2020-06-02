@@ -6,6 +6,7 @@ class CreateAds < ActiveRecord::Migration[6.0]
       t.text :text
       t.integer :price
       t.references :user
+      t.references :subcategory
 
       t.timestamps
     end

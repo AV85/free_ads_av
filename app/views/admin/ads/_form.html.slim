@@ -10,5 +10,6 @@
     = f.input :image_3, label: 'Третья картинка'
     = f.input :image_4, label: 'Четвертая картинка'
     = f.input :image_5, label: 'Пятая картинка'
+    = f.input :subcategory_id, collection: Subcategory.all.map { |subcategory| [subcategory.name, subcategory.id, {data: {name: subcategory.name}}] }, include_blank: false
     = f.input :user_id, collection: User.all.map { |user| [user.email, user.id, {data: {email: user.email}}] }, include_blank: false
     = f.button :submit

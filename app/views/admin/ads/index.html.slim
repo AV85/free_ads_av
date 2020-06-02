@@ -10,6 +10,7 @@
             tr
               th ID
               th Статус
+              th Раздел и подраздел
               th Название
               th Текст
               th Фото
@@ -32,6 +33,10 @@
                     span.state.state-published = ad.state
                   - if ad.state == 6
                     span.state.state-archival = ad.state
+                td.table__td-size_md
+                  span = ad.subcategory.category.name
+                  = fa_icon('angle-right', style: 'padding: 0 5px')
+                  span = ad.subcategory.name
                 td.table__td-size_md = ad.name
                 td.table__td-size_lg = ad.text
                 td

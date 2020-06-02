@@ -42,8 +42,10 @@ ActiveRecord::Schema.define(version: 2020_05_31_113609) do
     t.text "text"
     t.integer "price"
     t.bigint "user_id"
+    t.bigint "subcategory_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["subcategory_id"], name: "index_ads_on_subcategory_id"
     t.index ["user_id"], name: "index_ads_on_user_id"
   end
 
