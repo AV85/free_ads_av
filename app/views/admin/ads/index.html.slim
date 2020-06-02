@@ -37,19 +37,19 @@
                   span = ad.subcategory.category.name
                   = fa_icon('angle-right', style: 'padding: 0 5px')
                   span = ad.subcategory.name
-                td.table__td-size_sm
+                td.table__td-size_220
                   - if ad.main_image.attached?
-                    = image_tag ad.main_image.variant(resize: "64x64"), class: 'img-thumbnail'
+                    = image_tag ad.main_image.variant(resize: "100x100"), class: 'img-thumbnail'
                   - if ad.image_1.attached?
-                    = image_tag ad.image_1.variant(resize: "64x64"), class: 'img-thumbnail'
+                    = image_tag ad.image_1.variant(resize: "100x100"), class: 'img-thumbnail'
                   - if ad.image_2.attached?
-                    = image_tag ad.image_2.variant(resize: "64x64"), class: 'img-thumbnail'
+                    = image_tag ad.image_2.variant(resize: "100x100"), class: 'img-thumbnail'
                   - if ad.image_3.attached?
-                    = image_tag ad.image_3.variant(resize: "64x64"), class: 'img-thumbnail'
+                    = image_tag ad.image_3.variant(resize: "100x100"), class: 'img-thumbnail'
                   - if ad.image_4.attached?
-                    = image_tag ad.image_4.variant(resize: "64x64"), class: 'img-thumbnail'
+                    = image_tag ad.image_4.variant(resize: "100x100"), class: 'img-thumbnail'
                   - if ad.image_5.attached?
-                    = image_tag ad.image_5.variant(resize: "64x64"), class: 'img-thumbnail'
+                    = image_tag ad.image_5.variant(resize: "100x100"), class: 'img-thumbnail'
                 td.table__td-size_md = ad.name
                 td.table__td-size_lg = ad.text
                 td = ad.price

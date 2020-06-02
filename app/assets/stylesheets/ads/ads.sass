@@ -97,3 +97,32 @@ section.ads
       width: calc(30% - 22.5px)
       margin: 0 15px 0 7.5px
       padding: 15px
+    &-user
+      @include flexbox()
+      @include flex-direction(column)
+      @include align-items(center)
+      &-name
+        font-size: 1.2em
+        font-weight: bold
+      &-date-create
+        color: $font_grey
+      &-image
+        max-height: 64px
+        max-width: 64px
+        border: 1px solid $line_grey
+        padding: 8px
+        margin-bottom: 15px
+        border-radius: 50%
+        box-shadow: 0.3em 0.3em 3px rgba(0,0,0,0.3)
+        img
+          border-radius: 50%
+      &-contacts
+        @include flexbox()
+        @include justify-content(space-between)
+        margin: 15px 0
+      &-phone
+        width: 50%
+        text-align: center
+      &-send-msg
+        width: 50%
+        text-align: center

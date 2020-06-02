@@ -15,7 +15,7 @@
         - if current_user.first_name.present? && current_user.last_name.present?
           = link_to "#{current_user.first_name} #{current_user.last_name}", root_path
         - else
-          span = current_user.email
+          = link_to "#{current_user.email}", root_path
         = link_to '', destroy_user_session_path, :method => :delete, class: 'fas fa-sign-out-alt', title: "ВЫЙТИ"
         - if current_user.admin?
           = link_to '', admin_dashboard_index_path, class: 'fas fa-tools', title: "Панель администратора"

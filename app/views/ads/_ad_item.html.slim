@@ -29,5 +29,21 @@
         = item.text.html_safe
     .ad__item-sidebar
       .ad__item-user
-        .ad__item-user-image img
-        .ad__item-user-name = item.user.email
+        .ad__item-user-image
+          - if item.user.avatar.attached?
+            = image_tag item.user.avatar.variant(resize: "64x64!")
+          - else
+            = image_tag 'user_no_avatar.png', style: 'max-height: 64px; max-width: 64px;'
+        - if item.user.first_name.present? || item.user.last_name.present?
+          .ad__item-user-name #{item.user.first_name if item.user.first_name} #{item.user.last_name if item.user.last_name }
+        - else
+          .ad__item-user-name Пользователь № #{item.user.id}
+        .ad__item-user-date-create
+          span Дата регистрации:
+          span = item.user.created_at.strftime('%d.%m.%Y')
+        .ad__item-user-contacts
+          .ad__item-user-phone
+            | Кликните, что бы посмотреть номер
+            | +38(066)XXX-XX-XX
+          .ad__item-user-send-msg
+            | Написать автору
