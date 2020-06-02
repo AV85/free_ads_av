@@ -2,6 +2,7 @@ require 'ffaker'
 
 User.destroy_all
 Category.destroy_all
+Subcategory.destroy_all
 Ad.destroy_all
 
 User.create!(
@@ -85,7 +86,7 @@ Category.create!(name: 'Работа')
 Category.create!(name: 'Транспорт')
 Category.create!(name: 'Электроника')
 
-subcategory = Subcategory.create!(name: 'Игрушки', category_id: category.id)
+subcategory = Subcategory.create!(name: 'Игрушки', state: 1, category_id: category.id)
 
 Ad.create!(
   name: 'Продам 3-х комнатную квартиру',

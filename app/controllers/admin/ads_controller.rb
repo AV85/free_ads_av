@@ -3,7 +3,7 @@ class Admin::AdsController < ApplicationController
   before_action :set_ad, only: %i[show edit update destroy]
 
   def index
-    @ads = Ad.all
+    @ads = Ad.order(id: :desc)
   end
 
   def show; end

@@ -34,7 +34,7 @@
                 td
                   .table__subcategories
                     .table__subcategories-list
-                      = render partial: 'admin/subcategories/item_subcategory', collection: category.subcategories, as: :item
+                      = render partial: 'admin/subcategories/item_subcategory', collection: category.subcategories.order(id: :desc), as: :item
                     .table__subcategories-add
                       = render 'admin/subcategories/create_subcategories', category: category
                 td = category.created_at.strftime('%d-%m-%Y %H:%M:%S')

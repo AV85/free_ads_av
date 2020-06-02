@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 2020_05_31_113609) do
 
   create_table "subcategories", force: :cascade do |t|
     t.bigint "category_id", null: false
+    t.integer "state"
     t.string "name"
-    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_id"], name: "index_subcategories_on_category_id"

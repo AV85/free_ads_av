@@ -63,13 +63,12 @@ body
     .table__subcategories
       @include flexbox()
       &-list
-        min-width: 150px
+        min-width: 300px
       &-add
         width: 30px
         @include flexbox()
         @include justify-content(flex-end)
         @include align-items(center)
-
   .text-center
     text-align: center
   .link__grey
@@ -130,19 +129,6 @@ body
           max-width: 500px
           border: 1px solid $line_grey
           color: $font_grey
-    .asdndzone
-      @include flexbox
-      @include justify-content(center)
-      @include align-items(center)
-      min-height: 100px
-      border: 1px solid $line_grey
-      background: rgba(0,0,0,0.1)
-      padding-top: 15px
-      text-align: center
-      width: 100%
-      display: inline-block
-      box-sizing: border-box
-      margin: 4px 0 8px 0
   .img-thumbnail
     border: 1px solid $light_grey
     padding: 2px

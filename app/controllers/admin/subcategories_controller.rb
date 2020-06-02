@@ -37,6 +37,22 @@ class Admin::SubcategoriesController < ApplicationController
     end
   end
 
+  def to_publish
+    @subcategory = @category.subcategories.find(params[:id])
+    @subcategory.to_publish
+    redirect_and_notice
+  end
+
+  def to_draft
+    @subcategory = @category.subcategories.find(params[:id])
+    @subcategory.to_draft
+    redirect_and_notice
+  end
+
+  def redirect_and_notice
+    redirect_to admin_categories_path, notice: 'STATE was successfully updated.'
+  end
+
   private
 
   def set_category
@@ -44,6 +60,6 @@ class Admin::SubcategoriesController < ApplicationController
   end
 
   def subcategories_params
-    params.require(:subcategory).permit(:name, :category_id)
+    params.require(:subcategory).permit(:name, :category_id, :state)
   end
 end

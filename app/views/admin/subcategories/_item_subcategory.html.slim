@@ -1,7 +1,16 @@
 .subcategory__item
   .subcategory__item-wrapper
     .subcategory__item-title
-      = item.name
+      - if item.state == 1
+        span.state.state-draft = item.state
+      - if item.state == 2
+        span.state.state-published = item.state
+      span.subcategory__item-title-id id: #{item.id}
+      span.subcategory__item-title-state #{item.name}
     .subcategory__item-actions
+      - if item.state == 1
+        = link_to '', admin_category_subcategory_to_publish_path(item.category, item), class: 'fas fa-file-import table__icon table__icon_green', title: 'Опубликовать'
+      - if item.state == 2
+        = link_to '', admin_category_subcategory_to_draft_path(item.category, item), class: 'fas fa-file-export table__icon table__icon_orange', title: 'В черновик'
       = link_to '', edit_admin_category_subcategory_path(item.category, item), class: 'fas fa-edit table__icon table__icon_blue', title: 'Редактировать'
       = link_to '', admin_category_subcategory_path(item.category, item), data: {confirm: 'Are you sure?'}, method: :delete, remote: true, class: 'fas fa-trash table__icon table__icon_red', title: 'Удалить'
