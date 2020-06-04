@@ -4,4 +4,5 @@
       = link_to "#{image_tag item.icon.variant(resize: '48x48!')}".html_safe, category_path(item)
     - else
       = link_to "#{image_tag 'folder.svg'}".html_safe, category_path(item)
-  .category-item__name = link_to item.name, category_path(item)
+  .category-item__name
+    = link_to item.name, category_path(item)

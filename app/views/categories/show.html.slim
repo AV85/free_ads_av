@@ -4,4 +4,5 @@
       = render 'shared/navigation'
   .categories
     .container
-      h1 = @category.name
+      .category-wrapper
+        = render partial: 'subcategories/subcategory_item', collection: @subcategories, as: :item

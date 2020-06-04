@@ -1,0 +1,8 @@
+.page
+  header
+    .container
+      = render 'shared/navigation'
+  section.ads
+    .container
+      .ads__content
+        = render partial: 'ads/ads_item', collection: @ads, as: :item

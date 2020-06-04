@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = Category.published.find(params[:id])
+    @subcategories = Subcategory.subcategory_published.where(category_id: params[:id])
   end
 end

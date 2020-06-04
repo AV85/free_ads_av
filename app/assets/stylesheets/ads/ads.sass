@@ -119,10 +119,42 @@ section.ads
       &-contacts
         @include flexbox()
         @include justify-content(space-between)
+        @include flex-direction(column)
         margin: 15px 0
       &-phone
-        width: 50%
         text-align: center
+        width: 100%
+        background: $green
+        color: $white
+        margin-bottom: 15px
+        &-wrap
+          padding: 15px
+          @include flexbox()
+          @include align-items(center)
+          @include justify-content(center)
+          min-width: 240px
+        &-icon
+          @include flexbox()
+          @include align-items(center)
+          height: 36px
+          i
+            padding-right: 15px
+        &-text
+          @include flexbox()
+          @include align-items(center)
+          height: 36px
+          font-size: 1.2em
+          font-weight: bold
+          &:hover
+            cursor: pointer
+        &-number
+          min-width: 240px
+          font-size: 2em
+          padding-bottom: 15px
+        #phone-block
+          display: none
       &-send-msg
-        width: 50%
+        width: 100%
         text-align: center
+        background: $orange
+        color: $white

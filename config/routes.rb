@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: 'home#index'
-  resources :categories, only: %i[index show]
+  resources :categories, only: %i[index show] do
+    resources :subcategories, only: %i[show]
+  end
   get '/users/:id/profile', to: 'users#profile', as: 'profile'
   resources :ads, only: %i[show]
-
   namespace :admin do
     resources :dashboard, only: :index
     resources :categories do

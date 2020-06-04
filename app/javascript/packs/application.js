@@ -23,6 +23,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 import 'owl.carousel/docs/assets/owlcarousel/assets/owl.theme.default.min.css';
 import './owl-caroucel'
+import './scripts'
 
 //you may also need to add these two lines above the owl carousel code if you get the 'error $ is not a function' error in the console
 // import JQuery from 'jquery';
