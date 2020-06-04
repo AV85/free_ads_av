@@ -6,3 +6,7 @@
     .container
       .category-wrapper
         = render partial: 'subcategories/subcategory_item', collection: @subcategories, as: :item
+  section.ads
+    .container
+      .ads__content
+        = render partial: 'ads/ads_item', collection: @ads, as: :item

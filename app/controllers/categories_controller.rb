@@ -6,5 +6,6 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.published.find(params[:id])
     @subcategories = Subcategory.subcategory_published.where(category_id: params[:id])
+    @ads = Ad.all
   end
 end
