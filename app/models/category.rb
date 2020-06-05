@@ -7,6 +7,7 @@ class Category < ApplicationRecord
   scope :archival, -> { where(state: 3) }
 
   has_one_attached :icon, dependent: :destroy
+  has_many :ads, through: :subcategories
   has_many :subcategories
 
   validates :name, presence: true

@@ -2,6 +2,11 @@
   header
     .container
       = render 'shared/navigation'
+  .container
+    .ad__item-breadcrumbs.subcategories-breadcrumbs
+      span.green #{@subcategory.category.name}
+      = fa_icon('angle-right', style: 'padding: 0 4px')
+      span.orange #{@subcategory.name}
   section.ads
     .container
       .ads__content

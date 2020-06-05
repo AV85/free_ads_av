@@ -1,3 +1,4 @@
 .category-item
   .category-item__name
     = link_to item.name, category_subcategory_path(item.category, item)
+    span.ads-count = subcategories_ads_count(item)

@@ -6,3 +6,10 @@
     .container
       .category-wrapper
         = render partial: 'category_item', collection: @categories, as: :item
+    section.ads
+      .container
+        .ads__title Все объявления
+        .ads__content
+          = render partial: 'ads/ads_item', collection: @ads, as: :item
+
+  = render 'shared/footer'
