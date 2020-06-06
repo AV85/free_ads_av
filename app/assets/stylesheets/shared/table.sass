@@ -1,0 +1,60 @@
+@import "shared/variables"
+@import "shared/flexbox"
+
+table.table-admin
+  border: 1px solid $light_grey
+  thead
+    background: $line_grey
+    border-bottom: 1px solid $light_grey
+    font-weight: bold
+  tr
+    transition: .3s
+    &:hover
+      background: $line_grey
+      transition: .3s
+  th
+    padding: 15px 5px
+    border: 1px solid $light_grey
+  td
+    border: 1px solid $light_grey
+    padding: 6px 6px
+    max-width: 500px
+  .table__td-size_sm
+    max-width: 150px
+  .table__td-size_344
+    max-width: 344px
+  .table__td-size_md
+    max-width: 300px
+  .table__td-size_lg
+    max-width: 600px
+  .table__icon
+    text-decoration: none
+    padding: 4px
+    transition: 0.3s
+    outline: none
+    &:hover
+      cursor: pointer
+      transform: scale(1.5)
+      transition: 0.3s
+      outline: none
+    &_red
+      color: $red
+    &_green
+      color: $green
+    &_blue
+      color: $blue
+    &_yellow
+      color: $yellow
+    &_purple
+      color: $purple
+    &_orange
+      color: $orange
+  .table__subcategories
+    @include flexbox()
+    &-list
+      min-width: 300px
+    &-add
+      width: 30px
+      @include flexbox()
+      @include justify-content(flex-end)
+      @include align-items(center)

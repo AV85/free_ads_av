@@ -1,0 +1,38 @@
+@import "shared/variables"
+@import "shared/flexbox"
+
+.form
+  border: 1px solid $light_grey
+  padding: 15px
+  &-admin
+    width: 100%
+    max-width: 800px
+    .input
+      @include flexbox()
+      @include justify-content(space-between)
+      input
+        height: 40px
+        width: 100%
+        max-width: 500px
+        margin: 4px 0
+        padding: 0 15px
+        border: 1px solid $line_grey
+        color: $font_grey
+      textarea
+        height: 150px
+        width: 100%
+        max-width: 500px
+        margin: 4px 0
+        padding: 0 15px
+        border: 1px solid $line_grey
+        color: $font_grey
+      label
+        @include flexbox()
+        @include justify-content(center)
+        @include align-items(center)
+      select
+        height: 40px
+        width: 100%
+        max-width: 500px
+        border: 1px solid $line_grey
+        color: $font_grey
