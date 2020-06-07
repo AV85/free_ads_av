@@ -1,0 +1,15 @@
+.page
+  header
+    .container
+      = render 'shared/navigation'
+  .my-account
+    .container
+      .my-account-wrapper
+        = render 'myaccount/shared/myaccount_sidebar'
+        .my-account-body
+          .my-account-link
+            = link_to fa_icon('plus', text: 'Добавить обьявление'), new_myaccount_ad_path, class: 'link__grey link__grey_green'
+          - if @ads.present?
+            = render partial: 'myaccount/ads/ad_item', collection: @ads, as: :item
+          - else
+            p У Вас пока нет обьявлений

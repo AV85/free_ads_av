@@ -4,6 +4,7 @@
     .navigation-menu
       = link_to 'Главная', root_path
       = link_to 'Категории', categories_path
+      = link_to 'Мой аккаунт', myaccount_root_path if user_signed_in?
     .navigation-add-ads
       = link_to 'Добавить объявление', root_path, class: 'btn'
     .navigation-auth

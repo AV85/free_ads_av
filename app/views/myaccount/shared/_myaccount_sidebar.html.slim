@@ -1,0 +1,14 @@
+.my-account-sidebar
+  ul
+    - if current_page?(myaccount_root_path)
+      li = link_to fa_icon('ad', text: 'Объявления').html_safe, root_path, class: 'active'
+    - else
+      li = link_to fa_icon('ad', text: 'Объявления').html_safe, root_path
+    - if current_page?(root_path)
+      li = link_to fa_icon('inbox', text: 'Сообщения').html_safe, root_path, class: 'active'
+    - else
+      li = link_to fa_icon('inbox', text: 'Сообщения').html_safe, root_path
+    - if current_page?(root_path)
+      li = link_to fa_icon('tools', text: 'Настройки').html_safe, root_path, class: 'active'
+    - else
+      li = link_to fa_icon('tools', text: 'Настройки').html_safe, root_path

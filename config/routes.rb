@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   end
   get '/users/:id/profile', to: 'users#profile', as: 'profile'
   resources :ads, only: %i[show]
+  namespace :myaccount do
+    root to: 'ads#index'
+    resources :ads
+  end
   namespace :admin do
     resources :dashboard, only: :index
     resources :categories do
