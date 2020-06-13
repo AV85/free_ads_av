@@ -1,0 +1,15 @@
+.form
+  = simple_form_for [:myaccount, @ad], html:{class: 'form-myaccount'} do |f|
+    = f.error_notification
+    = f.input :name, label: 'Название'
+    = f.input :text, label: 'Текст'
+    = f.input :price, label: 'Цена в грн.'
+    = f.input :main_image, label: 'Главная картинка', input_html: { class: 'input-file'}
+    = f.input :image_1, label: 'Первая картинка', input_html: { class: 'input-file' }
+    = f.input :image_2, label: 'Вторая картинка', input_html: { class: 'input-file' }
+    = f.input :image_3, label: 'Третья картинка', input_html: { class: 'input-file' }
+    = f.input :image_4, label: 'Четвертая картинка', input_html: { class: 'input-file' }
+    = f.input :image_5, label: 'Пятая картинка', input_html: { class: 'input-file' }
+    = f.input :subcategory_id, label: 'Раздел', collection: Subcategory.all.map { |subcategory| [subcategory.name, subcategory.id, {data: {name: subcategory.name}}] }, include_blank: false
+    = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+    = f.button :submit, class: 'btn-green', style: 'margin-top: 15px'

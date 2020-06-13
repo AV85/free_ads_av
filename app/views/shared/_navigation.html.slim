@@ -6,7 +6,7 @@
       = link_to 'Категории', categories_path
       = link_to 'Мой аккаунт', myaccount_root_path if user_signed_in?
     .navigation-add-ads
-      = link_to 'Добавить объявление', root_path, class: 'btn'
+      = link_to 'Добавить объявление', new_myaccount_ad_path, class: 'btn'
     .navigation-auth
       - if user_signed_in?
         - if current_user.avatar.attached?

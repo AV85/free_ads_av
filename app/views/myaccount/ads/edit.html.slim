@@ -1,0 +1,11 @@
+.page
+  header
+    .container
+      = render 'shared/navigation'
+  .my-account
+    .container
+      .my-account-wrapper
+        = render 'myaccount/shared/myaccount_sidebar'
+        .my-account-body
+          .my-account-form
+            = render 'myaccount/ads/form'

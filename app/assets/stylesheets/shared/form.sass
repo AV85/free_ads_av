@@ -2,9 +2,9 @@
 @import "shared/flexbox"
 
 .form
-  border: 1px solid $light_grey
-  padding: 15px
   &-admin
+    border: 1px solid $light_grey
+    padding: 15px
     width: 100%
     max-width: 800px
     .input
@@ -36,3 +36,60 @@
         max-width: 500px
         border: 1px solid $line_grey
         color: $font_grey
+  &-myaccount
+    width: calc(100% - 30px)
+    padding: 15px
+    .input
+      @include flexbox()
+      @include justify-content(space-between)
+      @include align-items(center)
+      input
+        height: 40px
+        width: 100%
+        max-width: 500px
+        margin: 4px 0
+        padding: 0 15px
+        border: 1px solid $line_grey
+        color: $font_grey
+      .input-file
+        padding-top: 13px
+        &::-webkit-file-upload-button
+          visibility: hidden
+        &::before
+          content: 'Выберите файл'
+          display: inline-block
+          background: linear-gradient(top, #f9f9f9, #e3e3e3)
+          border: 1px solid #999
+          border-radius: 3px
+          padding: 5px 8px
+          outline: none
+          white-space: nowrap
+          -webkit-user-select: none
+          cursor: pointer
+          font-weight: 700
+          font-size: .75em
+          transition: .2s all ease
+        &:hover::before
+          background-color: $green
+          border-color: $green
+          color: $white
+          transition: .1s all ease
+          box-shadow: 0.3em 0.3em 3px rgba(122,122,122,0.5)
+        &:active::before
+          background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9)
+    textarea
+      font-family: 'Cuprum', sans-serif!important
+      height: 150px
+      width: 100%
+      max-width: 500px
+      margin: 4px 0
+      padding: 15px 15px 0 15px
+      border: 1px solid $line_grey
+      color: $font_grey
+    select
+      height: 40px
+      width: 100%
+      max-width: 532px
+      border: 1px solid lightgray
+      color: #686868
+      padding-left: 10px

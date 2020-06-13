@@ -14,6 +14,7 @@
               th ID
               th Статус
               th Раздел и подраздел
+              th Автор
               th Фото
               th Название
               th Текст
@@ -40,7 +41,10 @@
                   span = ad.subcategory.category.name
                   = fa_icon('angle-right', style: 'padding: 0 5px')
                   span = ad.subcategory.name
-                td.table__td-size_344
+                td
+                  p #{ad.user.first_name} #{ad.user.last_name}
+                  p.text-grey = ad.user.email
+                td.table__td-size_400
                   - if ad.main_image.attached?
                     = image_tag ad.main_image.variant(resize: "100x100"), class: 'img-thumbnail'
                   - if ad.image_1.attached?
@@ -54,7 +58,7 @@
                   - if ad.image_5.attached?
                     = image_tag ad.image_5.variant(resize: "100x100"), class: 'img-thumbnail'
                 td.table__td-size_md = ad.name
-                td.table__td-size_lg = ad.text
+                td.table__td-size_lg = ad.text.truncate(600)
                 td = ad.price
                 td
                   = link_to '', admin_ad_path(ad), class: 'fas fa-eye table__icon table__icon_green'

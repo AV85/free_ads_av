@@ -4,16 +4,11 @@
       = image_tag item.main_image.variant(resize: "120x120"), class: 'img-thumbnail'
     - else
       = image_tag 'no_image.png', style: 'max-height: 120px', class: 'img-thumbnail'
-  .my-account__ad-item-category
-    = item.subcategory.category.name
-    = fa_icon('angle-right')
-    = item.subcategory.name
-  .my-account__ad-item-state
-    = item.state
-  .my-account__ad-item-title
-    = item.name
   .my-account__ad-item-text
-    = item.text.truncate(150)
-  .my-account__ad-item-price
-    = item.price
-  = link_to '', myaccount_ad_path(item), data: {confirm: 'Are you sure?'}, method: :delete, remote: true, class: 'fas fa-trash table__icon table__icon_red'
+    .my-account__ad-item-title
+      span = item.name
+      span #{item.price} грн
+    .my-account__ad-item-actions
+      = link_to fa_icon('eye', text: 'Посмотреть'), ad_path(item), class: 'link__grey link__grey_green', style: 'font-weight: bold'
+      = link_to fa_icon('edit', text: 'Редактировать'), edit_myaccount_ad_path(item), class: 'link__grey link__grey_blue', style: 'font-weight: bold'
+      = link_to fa_icon('trash', text: 'Удалить'), myaccount_ad_path(item), data: {confirm: 'Are you sure?'}, method: :delete, remote: true, class: 'link__grey link__grey_orange', style: 'font-weight: bold'

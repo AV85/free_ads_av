@@ -1,0 +1,23 @@
+@import "shared/flexbox"
+@import "shared/variables"
+
+.btn-green
+  @include flexbox()
+  @include align-items(center)
+  @include justify-content(center)
+  height: 30px
+  width: 125px
+  border: 1px solid $green
+  background: $green
+  color: $white
+  text-decoration: none
+.btn-red
+  @include flexbox()
+  @include align-items(center)
+  @include justify-content(center)
+  height: 30px
+  width: 125px
+  border: 1px solid $red
+  background: $red
+  color: $white
+  text-decoration: none
