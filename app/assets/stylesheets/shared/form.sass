@@ -39,6 +39,10 @@
   &-myaccount
     width: calc(100% - 30px)
     padding: 15px
+    .img-form
+      @include flexbox()
+      @include justify-content(space-between)
+      @include align-items(center)
     .input
       @include flexbox()
       @include justify-content(space-between)

@@ -20,10 +20,15 @@ section.ads
       background: $white
       width: calc(1080px / 4)
       margin: 15px
+      transition: .2s ease all
       img
         object-fit: cover
         width: 270px
         height: 220px
+      &:hover
+        box-shadow: 0.3em 0.3em 3px rgba(122, 122, 122, 0.5)
+        cursor: pointer
+        transition: .2s ease all
       &-category
         font-size: .8em
         padding: 15px
@@ -53,7 +58,6 @@ section.ads
         color: $font_grey
 
 .page-ad
-  margin: 20px 0
   padding: 15px 0
   .ad__item
     &-wrapper
