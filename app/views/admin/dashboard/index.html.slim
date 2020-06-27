@@ -4,3 +4,24 @@
     = render 'admin/shared/admin_content_header'
     .admin-content-body
       h1 Панель управления
+      .dashboard-content
+        .dashboard-item
+          = link_to 'Категории', admin_categories_path, class: 'dashboard-item__title'
+          p Всего категорий: #{@categories.count}
+          p Активных категорий: #{@categories.published.count}
+          p Черновик: #{@categories.draft.count}
+          p В архиве: #{@categories.archival.count}
+          p Всего подкатегорий: 0
+          p Активных подкатегорий: 0
+          p Не активных подкатегорий: 0
+        .dashboard-item
+          = link_to 'Объявления', admin_ads_path, class: 'dashboard-item__title'
+          p Всего объявлений: #{@ads.not_draft.count}
+          p Активных объявлений: #{@ads.published.count}
+          p Не активных объявлений: 0
+          p На модерации: 0
+          p Отклоненных: 0
+        .dashboard-item
+          = link_to 'Пользователи', admin_users_path, class: 'dashboard-item__title'
+          p Всего пользователей: #{@users.count}
+          p Забаненых пользователей: 0

@@ -1,5 +1,24 @@
 @import "shared/flexbox"
 @import "shared/variables"
-//
+
 //.admin-content-body
 //  padding: 15px
+
+.dashboard
+  &-content
+    @include flexbox()
+    @include flex-wrap(wrap)
+  &-item
+    margin: 0 15px 15px 0
+    padding: 15px
+    width: 360px
+    border: 1px solid $line_grey
+    &__title
+      font-size: 1.5em
+      text-decoration: none
+      text-underline: none
+      color: $font_grey
+      transition: .2s all ease
+      &:hover
+        color: $orange
+        transition: .2s all ease
