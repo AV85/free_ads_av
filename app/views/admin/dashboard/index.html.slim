@@ -16,9 +16,9 @@
           p Не активных подкатегорий: 0
         .dashboard-item
           = link_to 'Объявления', admin_ads_path, class: 'dashboard-item__title'
-          p Всего объявлений: #{@ads.not_draft.count}
+          p Всего объявлений: #{@ads.count}
           p Активных объявлений: #{@ads.published.count}
-          p Не активных объявлений: 0
+          p Черновиков: #{@ads.draft.count}
           p На модерации: 0
           p Отклоненных: 0
         .dashboard-item

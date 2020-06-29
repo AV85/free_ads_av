@@ -15,6 +15,7 @@ class Ad < ApplicationRecord
   scope :approved, -> { where(state: 4) }
   scope :published, -> { where(state: 5) }
   scope :not_draft, -> { where.not(state: 1) }
+  scope :draft, -> { where(state: 1) }
 
   validates :name, presence: true
 
