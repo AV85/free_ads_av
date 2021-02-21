@@ -34,7 +34,7 @@
                 - if user.avatar.attached?
                   td.text-center = image_tag user.avatar.variant(resize: "32x32!"), class: 'rounded-circle'
                 - else
-                  td.text-center = image_tag 'user_no_avatar.png', style: 'width: 32px; height: 32px;'
+                  td.text-center = image_tag("user_no_avatar.png"), style: 'width: 32px; height: 32px;'
                 td = user.role
                 td = user.email
                 td = user.first_name

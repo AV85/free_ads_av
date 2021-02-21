@@ -12,7 +12,7 @@
         - if current_user.avatar.attached?
           span = image_tag current_user.avatar.variant(resize: "48x48!")
         - else
-          span = image_tag 'user_no_avatar'
+          span = image_tag("user_no_avatar.png")
         - if current_user.first_name.present? && current_user.last_name.present?
           = link_to "#{current_user.first_name} #{current_user.last_name}", root_path
         - else
